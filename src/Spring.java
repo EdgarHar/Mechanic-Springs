@@ -59,6 +59,14 @@ public class Spring {
         return move(t, dt, x0, 1.0);
     }
 
+    public Spring inSeries(Spring that) {
+        return new Spring(Math.pow((1/this.stiffness) + (1/that.stiffness), -1));
+    }
+
+    public Spring inParallel(Spring that) {
+        return new Spring(this.stiffness + that.stiffness);
+    }
+
 
     public double getStiffness() {
         return stiffness;
