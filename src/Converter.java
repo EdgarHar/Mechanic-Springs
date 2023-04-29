@@ -2,8 +2,6 @@ import transform.FT;
 
 public abstract class Converter {
 
-
-
     protected abstract double[] convertBitsToSprings(boolean[] bits);
 
     public abstract double evaluateDecimalValue(boolean[] bits);
