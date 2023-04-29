@@ -12,9 +12,9 @@ public abstract class Converter {
     }
 
 
-    protected abstract double[] convertBitsToSprings(boolean[] bits);
+    protected abstract String convertBitsToSprings(boolean[] bits);
 
-    public abstract double evaluateDecimalValue(boolean[] bits);
+    public abstract double evaluateDecimalValue(double[] amplifications, double[] frequencies);
 
     public double[] computeOscillations(Spring spring, double startTime, double endTime, double dt) {
         return spring.move(startTime, endTime, dt, 0, 1, 2);
