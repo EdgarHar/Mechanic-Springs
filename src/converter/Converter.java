@@ -1,6 +1,16 @@
+package converter;
+
+import spring.Spring;
 import transform.FT;
 
+
 public abstract class Converter {
+    protected int numBits;
+
+    public Converter(int numBits) {
+        this.numBits = numBits;
+    }
+
 
     protected abstract double[] convertBitsToSprings(boolean[] bits);
 

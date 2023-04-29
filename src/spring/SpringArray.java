@@ -1,3 +1,7 @@
+package spring;
+
+import spring.Spring;
+
 import java.util.Stack;
 
 public class SpringArray {

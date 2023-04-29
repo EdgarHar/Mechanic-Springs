@@ -1,3 +1,5 @@
+package spring;
+
 import static java.lang.Math.sin;
 
 public class Spring {
