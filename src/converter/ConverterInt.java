@@ -2,11 +2,10 @@ package converter;
 
 import java.util.stream.IntStream;
 
-public class Converter8Bit extends Converter {
+public class ConverterInt extends Converter {
+    private static final int BITS = 24;
 
-    private static final int BITS = 8;
-
-    public Converter8Bit() {
+    public ConverterInt() {
         super(BITS);
     }
 

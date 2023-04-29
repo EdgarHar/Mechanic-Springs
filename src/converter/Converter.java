@@ -25,4 +25,11 @@ public abstract class Converter {
         final FT ft = new FT(oscillations);
         return ft.amplitude();
     }
+
+    public boolean validate(boolean[] bits) {
+        if (bits.length != numBits) {
+            throw new IllegalArgumentException("Invalid number of bits");
+        }
+        return true;
+    }
 }

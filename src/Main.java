@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hey to my future spring project");
+        System.out.println(".");
     }
 }
