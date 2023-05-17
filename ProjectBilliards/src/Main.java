@@ -1,5 +1,8 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello to my future final project");
+        HorizontalCircularBilliard horizontalCircularBilliard = new HorizontalCircularBilliard(10);
+        List<Point> points = horizontalCircularBilliard.start();
     }
 }
