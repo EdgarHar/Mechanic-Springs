@@ -1,12 +1,16 @@
+package task1;
+
+import util.Point;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class HorizontalCircularBilliard {
 
-    private int numberOfReflections;
+    private final int NUMBER_OF_REFLECTIONS;
 
     public HorizontalCircularBilliard(int numberOfReflections) {
-        this.numberOfReflections = numberOfReflections;
+        this.NUMBER_OF_REFLECTIONS = numberOfReflections;
     }
 
     public List<Point> start() {
@@ -16,9 +20,7 @@ public class HorizontalCircularBilliard {
         double px = Math.random();
         double py = Math.random();
 
-        for (int i = 0; i < numberOfReflections; i++) {
-            points.add(point);
-
+        for (int i = 0; i < NUMBER_OF_REFLECTIONS; i++) {
             //get next positions
             double nextX = point.getX() + px;
             double nextY = point.getY() + py;
@@ -26,6 +28,8 @@ public class HorizontalCircularBilliard {
 
             point.setX(nextX / dist);
             point.setY(nextY / dist);
+
+            points.add(Point.of(nextX / dist, nextY / dist));
 
             //determine new momentum by provided formula
             px = (nextY * nextY - nextX * nextX) * px - 2 * nextX * nextY * py;
@@ -35,11 +39,11 @@ public class HorizontalCircularBilliard {
     }
 
     public boolean isReversible(List<Point> points, double delta) {
-        Point point = points.get(numberOfReflections - 1);
+        Point point = points.get(NUMBER_OF_REFLECTIONS - 1);
         double x = point.getX();
         double y = point.getY();
         //traverse the list backwards to go reverse
-        for (int i = numberOfReflections - 1; i >= 0; i--) {
+        for (int i = NUMBER_OF_REFLECTIONS - 1; i >= 0; i--) {
             //take reverse of the momentum
             double px = -x;
             double py = -y;
